@@ -12,6 +12,13 @@ const createHTML = (data) => {
           </div>
         </div>`;
 };
+$(document).on({
+    ajaxStop: () => {
+        $('.content').removeClass('d-none');
+        $('.loader').fadeOut(1000);
+        $('.content').fadeIn(1000);
+    },
+})
 let dataSurat = '';
 let allSurat;
 $.get('https://api.npoint.io/99c279bb173a6e28359c/data', (data) => {
@@ -46,13 +53,7 @@ const searchSurat = () => {
     }
 };
 
-$(document).on({
-    ajaxStop: () => {
-        $('.content').removeClass('d-none');
-        $('.loader').fadeOut(1000);
-        $('.content').fadeIn(1000);
-    },
-})
+
 
 const scrollBtn = document.querySelector('.scrolling-container');
 
