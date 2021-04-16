@@ -15,7 +15,7 @@ section.form-search .form-control {
     line-height: 1.5;
 }
 
-.card.surat {
+.surat .card {
     position: relative;
     overflow: hidden;
     border-radius: 6px;
