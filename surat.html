@@ -37,7 +37,9 @@
 </head>
 <body id="index">
     <div class="loader">
-        <div class="load"></div>
+        <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+        </svg>
     </div>
     <div class="content d-none">
         <nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm">
@@ -63,14 +65,15 @@
                 <div class="col-lg-4">
                     <div class="card border-0 shadow">
                         <div class="card-body">
-                            <h4><span class="nama-surat"></span> <span class="ayat text-secondary"></span></h4>
-                            <h3 class="text-success text-right asma"></h3>
+                            <h5><span class="nama-surat"></span> <span class="ayat text-secondary"></span></h5>
+                            <h2 class="text-success text-right asma"></h2>
                             <h5>(Arti : <span class="arti text-primary"></span>)</h5>
                             <p class="text-secondary d-flex justify-content-between"><span class="surat-ke"></span> <span class="diturunkan"></span></p>
+                            <p>Keterangan : <span class="keterangan"></span></p>
                         </div>
                     </div>
                     <div class="card border-0 shadow mb-3 mt-3">
-                        <div class="card-body text-center">
+                        <div class="card-body text-center show-audio">
                             <audio controls>
                             </audio>
                         </div>
@@ -78,7 +81,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="card border-0 shadow">
-                        <div class="card-body">
+                        <div class="card-body px-2">
                             <ul class="list-group list-group-flush list-ayat">
                             </ul>
                         </div>
