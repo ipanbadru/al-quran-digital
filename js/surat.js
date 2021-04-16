@@ -23,7 +23,7 @@ const no = dataURL.no[0];
 $.get('https://api.npoint.io/99c279bb173a6e28359c/surat/' + no, (data) => {
     let ayats = '';
     $.each(data, (i, ayat) => {
-        ayats += `<li class="list-group-item px-0 py-2"><h3 class="text-right ayat-ar">${ayat.ar}</h3><h5 class="ayat-terjemahan" style="font-size: .8rem;">${ayat.nomor}. ${ayat.id}</h5></li>`;
+        ayats += `<li class="list-group-item px-0 py-2"><h3 class="text-right ayat-ar">${ayat.ar}</h3><h5 class="ayat-terjemahan text-secondary" style="font-size: .8rem;">${ayat.nomor}. ${ayat.id}</h5></li>`;
     });
     $('.list-ayat').html(ayats);
 });
