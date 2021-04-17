@@ -17,13 +17,15 @@ let allSurat;
 $.get('https://api.npoint.io/99c279bb173a6e28359c/data', (data) => {
     allSurat = data;
     console.log(data);
-    $.each(data, (i, d) => {
-        dataSurat += createHTML(d);
-    });
-    $('.list-surat').html(dataSurat);
-    $('.content').removeClass('d-none');
-    $('.loader').fadeOut(1000);
-    $('.content').fadeIn(1000);
+    setTimeout(() => {
+        $.each(data, (i, d) => {
+            dataSurat += createHTML(d);
+        });
+        $('.list-surat').html(dataSurat);
+        $('.content').removeClass('d-none');
+        $('.loader').fadeOut(1000);
+        $('.content').fadeIn(1000);
+    }, 1500)
 });
 const searchSurat = () => {
     const kata = $('.cari-surat').val().toLowerCase();
@@ -31,15 +33,12 @@ const searchSurat = () => {
         $('.list-surat').html(dataSurat);
     } else {
         const dataBaru = allSurat.filter(surat => surat.nama.toLowerCase().includes(kata));
-        console.log(dataBaru);
         if (dataBaru.length) {
             let dataSuratBaru = '';
 
             $.each(dataBaru, (i, data) => {
                 dataSuratBaru += createHTML(data);
             });
-
-            $('.list-surat').html('');
             $('.list-surat').html(dataSuratBaru);
         } else {
             $('.list-surat').html(`<div class="col-12">
