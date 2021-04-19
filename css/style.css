@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
+
 html {
     scroll-behavior: smooth;
 }
@@ -212,11 +214,6 @@ svg circle {
     position: relative;
 }
 
-.nomor {
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    width: 20px;
-    height: 20px;
-
+.text-arab {
+    font-family: 'Amiri', serif;
 }

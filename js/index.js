@@ -5,7 +5,7 @@ const createHTML = (data) => {
               <h4 class="text-dark">${data.nomor}. ${data.nama} <span class="text-secondary" style="font-size: .8em;">ayat(${data.ayat})</span></h4>
               <div class="d-flex justify-content-between">
                 <span class="text-secondary">Surat Ke-${data.urut}</span>
-                <h2 class="text-right text-success">${data.asma}</h2>
+                <h2 class="text-right text-success text-arab">${data.asma}</h2>
               </div>
               <p class="text-dark">${data.arti}</p>
             </a>
@@ -16,23 +16,20 @@ let dataSurat = '';
 let allSurat;
 $.get('https://api.npoint.io/99c279bb173a6e28359c/data', (data) => {
     allSurat = data;
-    console.log(data);
-    setTimeout(() => {
-        $.each(data, (i, d) => {
-            dataSurat += createHTML(d);
-        });
-        $('.list-surat').html(dataSurat);
-        $('.content').removeClass('d-none');
-        $('.loader').fadeOut(1000);
-        $('.content').fadeIn(1000);
-    }, 1500)
+    $.each(data, (i, d) => {
+        dataSurat += createHTML(d);
+    });
+    $('.list-surat').html(dataSurat);
+    $('.content').removeClass('d-none');
+    $('.loader').fadeOut(1000);
+    $('.content').fadeIn(1000);
 });
 const searchSurat = () => {
     const kata = $('.cari-surat').val().toLowerCase();
     if (kata == '') {
         $('.list-surat').html(dataSurat);
     } else {
-        const dataBaru = allSurat.filter(surat => surat.nama.toLowerCase().includes(kata));
+        const dataBaru = allSurat.filter(surat => surat.nama.toLowerCase().includes(kata) || surat.arti.toLowerCase().includes(kata));
         if (dataBaru.length) {
             let dataSuratBaru = '';
 

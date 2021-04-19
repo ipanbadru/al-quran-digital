@@ -29,7 +29,7 @@ $.get('https://api.npoint.io/99c279bb173a6e28359c/surat/' + no, (data) => {
                 ayatArab = ayatArab.slice(38, 999999999999);
             }
         }
-        ayats += `<li class="list-group-item px-0 py-2"><h3 class="text-right ayat-ar">${ayatArab}</h3><h5 class="ayat-terjemahan text-secondary" style="font-size: .8rem;">${ayat.nomor}. ${ayat.id}</h5></li>`;
+        ayats += `<li class="list-group-item px-0 py-2"><h3 class="text-right ayat-ar text-arab">${ayatArab}</h3><h5 class="ayat-terjemahan text-secondary" style="font-size: .8rem;">${ayat.nomor}. ${ayat.id}</h5></li>`;
     });
     $('.list-ayat').html(ayats);
 });
